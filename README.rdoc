@@ -1,0 +1,35 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+Versión de Ruby 1.9.1
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+Este proyecto es para realizar prácticas de todo tipo sin arriesgar algún repo
+quu ya haya sido creado. Se podrán agregar y retirar controladores, bibliotecas
+de clases y demás recursos para realizar alguna tarea.
+Es necesario realizar una breve pero concreta descripción en el commit para
+saber cual fue el cambio.
