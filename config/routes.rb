@@ -1,5 +1,16 @@
 Practicas::Application.routes.draw do
   get "welcome/index"
+  get "grafico2/index"
+  get "grafico3/index"
+  get "grafico4/index"
+  get "grafico5/index"
+  get "grafico6/index"
+  get "grafico7/index"
+  get "grafico8/index"
+  get "grafico9/index"
+  get "grafico10/index"
+ 
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

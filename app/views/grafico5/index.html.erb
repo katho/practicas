@@ -1,0 +1,96 @@
+<script type="text/javascript" charset="utf-8">
+		var dato_1 = new Array(2);
+		var dato_2 = new Array(2);
+		var dato_3 = new Array(2);
+		var dato_4 = new Array(2);
+		var dato_5 = new Array(2);
+		var dato_6 = new Array(2);
+		var dato_7 = new Array(2);
+		var i = 0;
+		
+$(function () {
+		dato_1[0] = 10;
+		dato_2[0] = 20;
+		dato_3[0] = 35;
+		dato_4[0] = 40;
+		dato_5[0] = 60;
+		dato_6[0] = 75;
+		dato_7[0] = 80.9;
+		dato_1[1] = 25
+		dato_2[1] = 15;
+		dato_3[1] = 5;
+		dato_4[1] = -5;
+		dato_5[1] = -10;
+		dato_6[1] = -15;
+		dato_7[1] = -20;
+
+        var chart = new Highcharts.Chart({
+            chart:{
+            renderTo: 'my_container',
+            type: 'spline',
+            inverted: true,
+            width: 500,
+            style: {
+                margin: '0 auto'
+                }
+            },
+            title: {
+                text: 'Temperatura de la atmósfera por altitud'
+            },
+            subtitle: {
+                text: 'Resultados medidos por la sonda AEIS-100x'
+            },
+            xAxis: {
+                reversed: false,
+                title: {
+                    enabled: true,
+                    text: 'Altitud'
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value +'km';
+                    }
+                },
+                maxPadding: 0.05,
+                showLastLabel: true
+            },
+            yAxis: {
+                title: {
+                    text: 'Temperatura'
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value + '°';
+                    }
+                },
+                lineWidth: 2
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br/>',
+                pointFormat: '{point.x} km: {point.y}°C'
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enable: false
+                    }
+                }
+            },
+            series: [{
+                name: 'Temperatura',
+                data: [dato_1,  dato_2, dato_3, dato_4,  dato_5, dato_6, dato_7]
+            }]
+        });
+    });
+    
+
+		</script>
+
+        <div id="my_container" style="min-width: 500px; height: 400px; margin: 0 auto"></div>
+
+<div id="my_div">
+
+</div>

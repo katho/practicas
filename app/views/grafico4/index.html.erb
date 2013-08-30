@@ -1,0 +1,82 @@
+<script type="text/javascript" charset="utf-8" >
+		var aleatorios = new Array(500);
+		var i = 0;
+		var fecha = new Date();
+		
+$(function () {
+
+		for(i = 0; i < aleatorios.length; i++)
+			{
+				aleatorios[i] = Math.floor((Math.random()*100)+1);
+			}
+        var chart = new Highcharts.Chart({
+            chart:{
+            renderTo: 'my_container',
+             zoomType: 'x'
+        },
+            title: {
+                text: 'Números aleatorios'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Haga click y arrastre para hacer zoom' :
+                    'Arrastre su dedo en el gráfico para hacer zoom'
+            },
+            xAxis: {
+                type: 'datetime',
+                maxZoom: 14 * 24 * 3600000, // fourteen days
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Este eje se ajusta a los datos a graficar'
+                }
+            },
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    lineWidth: 1,
+                    marker: {
+                        enabled: false
+                    },
+                    shadow: false,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [{
+                type: 'area',
+                name: 'Dato aleatorio',
+                pointInterval: 24 * 3600 * 1000, //Define el intervalo de puntos graficados
+                pointStart: Date.UTC(2012, 0, 01),
+                data: aleatorios
+            }]
+        });
+    });
+    
+
+		</script>
+<div id="my_container" style="min-width: 500px; height: 400px; margin: 0 auto"></div>
+
+<div id="my_div">
+
+</div>
