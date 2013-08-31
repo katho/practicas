@@ -1,0 +1,63 @@
+<script type="text/javascript" charset="utf-8">
+$(function () {
+         var chart = new Highcharts.Chart({
+        chart:{
+            renderTo: 'my_container',
+            type: 'bar'
+            },
+            
+            title: {
+                text: 'Porcentaje de llegadas a tiempo'
+            },
+            xAxis: {
+                categories: ['Bob Esponja', 'Calamardo Tentáculos', 'Patricio Estrella', 'Arenita Mejilla'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Unidades',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Abril',
+                data: [99.9, 90, 80, 75]
+            }, {
+                name: 'Mayo',
+                data: [100, 80, 55, 70]
+            }, {
+                name: 'Junio',
+                data: [99.8, 90, 67, 25.5]
+            }
+            , {
+                name: 'Julio',
+                data: [100, 89, 43.5, 99.5]
+            }]
+        });
+    });
+    </script>
+    <div id="my_container" style="min-width: 500px; height: 400px; margin: 0 auto"></div>
+
+<div id="my_div">
+
+</div>

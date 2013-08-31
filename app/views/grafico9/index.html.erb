@@ -1,0 +1,61 @@
+<script type="text/javascript" charset="utf-8">
+$(function(){
+     var chart = new Highcharts.Chart({
+        chart:{
+            renderTo: 'my_container',
+            polar: true,
+	        type: 'line'
+	    },
+	    
+	    title: {
+	        text: 'Presupuesto & Gastos',
+	        x: -80
+	    },
+	    
+	    pane: {
+	    	size: '80%'
+	    },
+	    
+	    xAxis: {
+	        categories: ['ventas', 'Marketing', 'Desarrollo', 'Atencion al Cliente', 
+	                'Information Technology', 'Administracion'],
+	        tickmarkPlacement: 'on',
+	        lineWidth: 0
+	    },
+	        
+	    yAxis: {
+	        gridLineInterpolation: 'polygon',
+	        lineWidth: 0,
+	        min: 0
+	    },
+	    
+	    tooltip: {
+	    	shared: true,
+	        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+	    },
+	    
+	    legend: {
+	        align: 'right',
+	        verticalAlign: 'top',
+	        y: 100,
+	        layout: 'vertical'
+	    },
+	    
+	    series: [{
+	        name: 'Allocated Budget',
+	        data: [43000, 19000, 60000, 35000, 17000, 10000],
+	        pointPlacement: 'on'
+	    }, {
+	        name: 'Actual Spending',
+	        data: [50000, 39000, 42000, 31000, 26000, 14000],
+	        pointPlacement: 'on'
+	    }]
+	
+	});
+});
+		</script>
+<div id="my_container" style="width: 700px; height: 400px; margin: 0 auto"></div>
+
+<div id="my_div"> 
+
+</div>

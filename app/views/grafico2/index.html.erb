@@ -1,0 +1,84 @@
+
+<script type="text/javascript" charset="utf-8">
+	 
+		var nombre_1 = 'González, Arnulfo';
+		var nombre_2 = 'Ramírez, Juan';
+		var nombre_3 = 'López, Antonio';
+		var categorias = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+		var datos_1 = [10000, 8500, 7900, 8200, 8900, 9000, 9500, 7100, 8050, 7100, 9000, 12000];
+		var datos_2 = [12000, 8100, 7200, 9200, 9900, 6000, 4500, 7600, 2050, 9100, 8060, 11500];
+		var datos_3 = [5000, 800, 2200, 4200, 10900, 8000, 5500, 3600, 1050, 10100, 8060, 21500];
+	$(function(){
+		var chart = new Highcharts.Chart({
+		    chart:{
+			renderTo: 'my_container',
+			type: 'line'
+		},							
+			title:{
+			text: 'Estadísticas de venta del año 2011',
+			x: -20
+			},
+				xAxis:{
+						categories: categorias
+						},
+					yAxis:{
+						title: {
+						text: 'Miles de pesos'
+							},
+										plotLines: [{
+											value: 0,
+											width: 1,
+											color: '#80808F'
+										}]
+									},
+									tooltip:{
+										formateer: function(){
+											return '<b>'+this.series.name+'</b><br/>'+
+											this.x+': '+this.y
+										}
+										
+									},
+									
+									/**
+									legend: {
+                						layout: 'vertical',
+						                align: 'right',
+						                verticalAlign: 'bottom',
+						                x: -100,
+						                y: -40,
+						                floating: true,
+						                borderWidth: 1,
+						                backgroundColor: '#FFFFFF',
+						                shadow: true
+						            },*/
+						           plotOptions: {
+						                line: {
+						                    dataLabels: {
+						                        enabled: true
+						                    },
+						                    enableMouseTracking: false
+						                }
+						            },
+						            credits: {
+						                enabled: false
+						            },
+									series:[{
+										name: nombre_1,
+										data: datos_1
+									},{
+										name: nombre_2,
+										data: datos_2
+									},{
+										name: nombre_3,
+										data: datos_3
+									}]
+								});
+							});
+						
+					</script>
+
+<div id="my_container" style="min-width: 500px; height: 400px; margin: 0 auto"></div>
+
+<div id="my_div">
+
+</div>

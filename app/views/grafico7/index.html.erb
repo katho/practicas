@@ -1,0 +1,59 @@
+<script type="text/javascript" charset="utf-8">
+$(function(){
+     var chart = new Highcharts.Chart({
+        chart:{
+            renderTo: 'my_container',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+        },
+        title: {
+                text: 'Cuotas de mercado del navegador de un sitio web específico, 2013'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+                percentageDecimals: 1
+            
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Explorer',   45.0],
+                    ['firefox',       26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Safari',    8.5],
+                    ['Opera',     6.2],
+                    ['Otros',   0.7]
+                ]
+            }]
+        });
+    });
+    
+
+        </script>
+
+<div id="my_container" style="width:600px; height:500px;"></div>
+
+<div id="my_div"> 
+
+</div>
