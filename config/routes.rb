@@ -1,4 +1,7 @@
 Practicas::Application.routes.draw do
+  get "grafica_pie/pie"
+  get "grafica_lineal/lineal"
+  get "bar/grafico_1"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

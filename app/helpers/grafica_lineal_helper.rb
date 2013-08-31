@@ -1,0 +1,2 @@
+module GraficaLinealHelper
+end
